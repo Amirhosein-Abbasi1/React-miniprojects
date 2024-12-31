@@ -1,31 +1,13 @@
 import React  from "react";
 import {createRoot} from "react-dom/client";
+import './index.css';
 
-const time = () =>{
-    const elem = (
-    <div>
-        <h1>
-            what time is it?
-        </h1>
-        <h2>
-            time is : {new Date().toLocaleTimeString()}
-        </h2>
-    </div>
-    )
-    //createRoot(document.getElementById("root")).render(elem);
-}
-setInterval(
-    ()=>{time();}, 1000
-)
-
-
-
-//Component
+//state and style css [[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]
 class App1 extends React.Component{
     render(){
         return(
-            <div>
-            <h1>
+        <div>
+            <h1 className="main">
                 what time is it?
             </h1>
         </div>
@@ -33,29 +15,41 @@ class App1 extends React.Component{
     }
 }
 class App2 extends React.Component{
+    constructor(){
+        super();
+        this.state = {
+            timer : new Date().toLocaleTimeString()
+        }
+    }
     render(){
+        setInterval(()=>{
+            this.setState({
+                timer : new Date().toLocaleTimeString()
+            })
+        }, 1000)
+
         return(
-            <div>
-            <h2>
-                time is : {new Date().toLocaleTimeString()}
-               </h2>
-            </div>   
+        <div className="timer">
+            <h2 >
+                time is : {this.state.timer}
+            </h2>
+        </div>   
         )
     }
 }
 class App extends React.Component{
     render(){
         return(
-            <div>
-                <App1/>
-                <App2/>
-            </div>
+        <div>
+            <App1/>
+            <App2/>
+        </div>
         )
     }
 }
-const timer = () =>{
     createRoot(document.getElementById("root")).render(<App/>);
-}
-setInterval(()=> {
-    timer();}, 1000
-)
+
+
+// setInterval(()=> {
+//     timer();}, 1000
+// )
