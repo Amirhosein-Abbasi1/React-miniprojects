@@ -2,7 +2,9 @@ import React  from "react";
 import {createRoot} from "react-dom/client";
 import './index.css';
 
-//state and style css [[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]
+var myInterval;
+
+//React life cycle [[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]
 class App1 extends React.Component{
     render(){
         return(
@@ -21,12 +23,37 @@ class App2 extends React.Component{
             timer : new Date().toLocaleTimeString()
         }
     }
-    render(){
-        setInterval(()=>{
+
+    componentDidMount(){
+        myInterval = setInterval(()=>{
             this.setState({
                 timer : new Date().toLocaleTimeString()
             })
         }, 1000)
+        console.log("componentDidMount");
+        //With this log you understand how it's work
+    }
+
+    componentDidUpdate(){
+        //the time stop at 8:48:35 AM with this if
+        if(this.state.timer === "8:48:35 AM"){
+            clearInterval(myInterval);
+        }
+        console.log(this.state.timer);
+    }
+
+    componentWillUnmount(){
+        //it start to ddoing when a component close
+    }
+
+    render(){
+        // myInterval = setInterval(()=>{
+        //     this.setState({
+        //         timer : new Date().toLocaleTimeString()
+        //     })
+        // }, 1000)
+        // console.log("render");
+
 
         return(
         <div className="timer">
@@ -50,6 +77,3 @@ class App extends React.Component{
     createRoot(document.getElementById("root")).render(<App/>);
 
 
-// setInterval(()=> {
-//     timer();}, 1000
-// )
