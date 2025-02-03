@@ -32,6 +32,7 @@ class App2 extends React.Component{
             <h2 >
                 time is : {this.state.timer}
             </h2>
+            <button onClick={this.props.chaing}>Chaing</button>
         </div>   
         )
     }

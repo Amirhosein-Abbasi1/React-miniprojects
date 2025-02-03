@@ -7,7 +7,7 @@ class App1 extends React.Component{
         return(
         <div>
             <h1 className="main">
-                what time is it?
+              {this.props.title}
             </h1>
         </div>
         )
