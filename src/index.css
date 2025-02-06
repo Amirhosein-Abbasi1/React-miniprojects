@@ -4,20 +4,39 @@ body{
 .main{
   color: wheat;
   font-family: tahoma;
-  margin-left: 40%;
-  margin-top: 5%;
+  margin-left: 41%;
+  font-size: 35px;
 }
 .timer{
-  width: 20%;
+  width: 320px;
   height: 300px;
-  font-size: 18px;
+  font-size: 20px;
+  text-align: center;
   color: wheat;
   font-family: tahoma;
   margin-left: 37%;
   margin-top: 1%;
-  padding-left: 2%;
   align-content: center;
   background-color: rgba(158, 255, 12, 0.403);
   border-radius: 50%;
   box-shadow: 0 0 30px rgba(0, 179, 0, 0.627);
+}
+.mainbtn{
+  margin-left: 39.4%;
+  margin-top: 1%;
+}
+.action-button{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-left: 2%;
+}
+.action-button.start{
+  background-color: rgb(0, 171, 0);
+}
+.action-button.stop{
+  background-color: rgb(192, 0, 0);
+}
+.action-button.reset{
+  background-color: rgb(158, 158, 158);
 }

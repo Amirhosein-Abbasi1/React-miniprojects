@@ -8,13 +8,8 @@ class App extends React.Component{
     constructor(){
         super();
         this.state={
-           title : "Reverse timer"
+           title : "Stopwatch"
         }
-    }
-    chaing =()=>{
-        this.setState({
-            title : "You clicked on it"
-        });
     }
     render(){
         return(
