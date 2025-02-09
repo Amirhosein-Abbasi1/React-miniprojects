@@ -11,6 +11,7 @@ class App2 extends React.Component{
             houre : 0,
             minute : 0,
             second : 0,
+            milliseconds : 0,
             isStart : false
         }
     }
@@ -22,8 +23,14 @@ class App2 extends React.Component{
             })
         myInterval = setInterval(()=>{
             this.setState({
-                second : this.state.second + 1
+                milliseconds : this.state.milliseconds + 1
             })
+            if(this.state.milliseconds === 99){
+                this.setState({
+                    milliseconds : 0,
+                    second : this.state.second + 1
+                })
+            }
             if(this.state.second === 60){
                 this.setState({
                     second : 0,
@@ -36,7 +43,7 @@ class App2 extends React.Component{
                     houre : this.state.houre + 1
                 })
             }
-        }, 1000)
+        }, 10)
       }
     }
 
@@ -52,7 +59,8 @@ class App2 extends React.Component{
         this.setState({
             houre : 0,
             minute : 0,
-            second : 0
+            second : 0,
+            milliseconds : 0
         })
     }
 
@@ -60,11 +68,12 @@ class App2 extends React.Component{
         let h = this.state.houre;
         let m = this.state.minute;
         let s = this.state.second;
+        let ms = this.state.milliseconds;
         return(
         <>
         <div className="timer">
             <h2 >
-              {`${h>9 ? h : "0"+h} : ${m>9 ? m : "0"+m} : ${s>9 ? s : "0"+s}`}
+              {`${h>9 ? h : "0"+h} : ${m>9 ? m : "0"+m} : ${s>9 ? s : "0"+s} . ${ms>9 ? ms : "0"+ms}`}
             </h2>
         </div>
         <div className="mainbtn">
