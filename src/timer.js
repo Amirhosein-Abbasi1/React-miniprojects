@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 // import {createRoot} from "react-dom/client";
 import './index.css';
 
@@ -31,13 +31,14 @@ class App2 extends React.Component{
                     second : this.state.second + 1
                 })
             }
-            if(this.state.second === 60){
+            // I changed the number 60 to 59 because that's how it is originally
+            if(this.state.second === 59){
                 this.setState({
                     second : 0,
                     minute : this.state.minute + 1
                 })
             }
-            if(this.state.minute === 60){
+            if(this.state.minute === 59){
                 this.setState({
                     minute : 0,
                     houre : this.state.houre + 1
@@ -80,6 +81,7 @@ class App2 extends React.Component{
             <button className="action-button start" onClick={this.startInterval}>Start</button>
             <button className="action-button stop" onClick={this.stopInterval}>Stop</button>
             <button className="action-button reset" onClick={this.resetInterval}>Reset</button>
+            <button className="action-button handle" onClick={this.props.handleSetTitle}>Chaing</button>
         </div>
         </>   
         )

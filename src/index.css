@@ -40,3 +40,6 @@ body{
 .action-button.reset{
   background-color: rgb(158, 158, 158);
 }
+.action-button.handle{
+  background-color: rgb(54, 90, 255);
+}
