@@ -1,5 +1,4 @@
 import React , {useState}  from "react";
-//import {createRoot} from "react-dom/client";
 import './index.css';
 import App1 from "./hello";
 import App2 from "./timer";
@@ -13,26 +12,28 @@ import App2 from "./timer";
 //     }
 //     render(){
 //         return(
-        // <div>
-        //     <App1 title={this.state.title}/>
-        //     <App2/>
-        // </div>
+//         <div>
+//             <App1 title={this.state.title}/>
+//             <App2/>
+//         </div>
 //         )
 //     }
 // }
 
 const App =()=>{
-    const [title , setTitle] = useState("Stopwatch");
+    const [isLight , SetIsLight] = useState(false);
+    const [title] = useState("Stopwatch");
 
-    const handleSetTitle =()=>{
-        setTitle("you changed it");
+    const handleSetIsLight =()=>{
+        SetIsLight(!isLight)
     }
-     return(
-       <div>
-        <App1 title={title}/>
-        <App2 handleSetTitle={handleSetTitle}/>
-       </div>
-     )
+
+    return(
+        <div className="main" style={{background:isLight ? "rgb(226, 226, 226)" : "rgb(43, 43, 43)"}}>
+            <App1 title={title}/>
+            <App2 isLight={isLight} handleSetIsLight={handleSetIsLight}/>
+        </div>
+    )
 }
 
 export default App;

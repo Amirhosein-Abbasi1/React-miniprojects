@@ -81,7 +81,17 @@ class App2 extends React.Component{
             <button className="action-button start" onClick={this.startInterval}>Start</button>
             <button className="action-button stop" onClick={this.stopInterval}>Stop</button>
             <button className="action-button reset" onClick={this.resetInterval}>Reset</button>
-            <button className="action-button handle" onClick={this.props.handleSetTitle}>Chaing</button>
+            <button 
+            className="action-button handle" 
+            onClick={this.props.handleSetIsLight}
+            style={{
+                background : this.props.isLight ? "rgb(43, 43, 43)" : "rgb(213, 213, 177)",
+                color : this.props.isLight ? "white" : "black",
+                fontSize : "30px"
+            }}
+            >
+                {this.props.isLight ? "🌙" : "🌞"}
+            </button>
         </div>
         </>   
         )

@@ -1,33 +1,36 @@
-body{
+/* body{
   background-color: rgb(43, 43, 43);
-}
+} */
 .main{
-  color: wheat;
+  width: 100%;
+  height: 97vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   font-family: tahoma;
-  margin-left: 41%;
-  font-size: 35px;
+  font-size: 20px;
+  color: wheat;
+  background-color: rgb(43, 43, 43);
 }
 .timer{
   width: 320px;
   height: 300px;
-  font-size: 20px;
-  text-align: center;
-  color: wheat;
-  font-family: tahoma;
-  margin-left: 37%;
-  margin-top: 1%;
-  align-content: center;
-  background-color: rgba(158, 255, 12, 0.403);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(90, 142, 14);
   border-radius: 50%;
   box-shadow: 0 0 30px rgba(0, 179, 0, 0.627);
 }
 .mainbtn{
-  margin-left: 39.4%;
   margin-top: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .action-button{
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 65px;
   border-radius: 50%;
   margin-left: 2%;
 }
@@ -39,7 +42,4 @@ body{
 }
 .action-button.reset{
   background-color: rgb(158, 158, 158);
-}
-.action-button.handle{
-  background-color: rgb(54, 90, 255);
 }

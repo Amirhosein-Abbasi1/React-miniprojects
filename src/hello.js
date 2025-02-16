@@ -6,7 +6,7 @@ class App1 extends React.Component{
     render(){
         return(
         <div>
-            <h1 className="main">
+            <h1>
                 {this.props.title}
             </h1>
         </div>
