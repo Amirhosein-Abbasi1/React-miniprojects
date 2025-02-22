@@ -2,6 +2,7 @@ import React , {useEffect, useState}  from "react";
 import './index.css';
 import App1 from "./hello";
 import App2 from "./timer";
+import { firstContext } from "./context";
 
 
 const App =()=>{
@@ -24,6 +25,7 @@ const App =()=>{
     }
 
     return(
+        <firstContext.Provider value="green">
         <div className="main" style={{background:isLight ? "rgb(226, 226, 226)" : "rgb(43, 43, 43)"}}>
             <App1 title={title}/>
             <App2 
@@ -33,6 +35,7 @@ const App =()=>{
              setTimeArr={setTimeArr}
              />
         </div>
+        </firstContext.Provider>
     )
 }
 
