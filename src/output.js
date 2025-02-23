@@ -25,14 +25,16 @@ const App =()=>{
     }
 
     return(
-        <firstContext.Provider value="green">
+        <firstContext.Provider value={{
+            timeArr : timeArr,
+            setTimeArr : setTimeArr
+        }}>
         <div className="main" style={{background:isLight ? "rgb(226, 226, 226)" : "rgb(43, 43, 43)"}}>
             <App1 title={title}/>
             <App2 
              isLight={isLight} 
              handleSetIsLight={handleSetIsLight}
-             timeArr={timeArr}
-             setTimeArr={setTimeArr}
+             
              />
         </div>
         </firstContext.Provider>

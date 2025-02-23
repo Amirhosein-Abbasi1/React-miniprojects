@@ -2,10 +2,12 @@ import React from "react";
 // import {createRoot} from "react-dom/client";
 import './index.css';
 import TimeList from "./timeList";
+import { firstContext } from "./context";
 
 var myInterval;
 
 class App2 extends React.Component{
+    static contextType = firstContext;
     constructor(){
         super();
         this.state = {
@@ -72,7 +74,7 @@ class App2 extends React.Component{
         let s = this.state.second;
         let ms = this.state.milliseconds;
         let newTime = `${h>9 ? h : "0"+h} : ${m>9 ? m : "0"+m} : ${s>9 ? s : "0"+s} . ${ms>9 ? ms : "0"+ms}`
-        this.props.setTimeArr([ ...this.props.timeArr , newTime]);
+        this.context.setTimeArr([ ...this.context.timeArr , newTime]);
     }
 
     render(){
@@ -104,7 +106,7 @@ class App2 extends React.Component{
             </button>
         </div>
         <TimeList>
-                {this.props.timeArr}
+                {this.context.timeArr}
         </TimeList>
         </>   
         )
