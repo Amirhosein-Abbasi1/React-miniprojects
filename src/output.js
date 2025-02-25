@@ -3,6 +3,7 @@ import './index.css';
 import App1 from "./hello";
 import App2 from "./timer";
 import { firstContext } from "./context";
+import TimeList from "./timeList";
 
 
 const App =()=>{
@@ -34,9 +35,10 @@ const App =()=>{
             <App2 
              isLight={isLight} 
              handleSetIsLight={handleSetIsLight}
-             
              />
+            <TimeList/>
         </div>
+
         </firstContext.Provider>
     )
 }

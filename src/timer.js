@@ -1,7 +1,6 @@
 import React from "react";
 // import {createRoot} from "react-dom/client";
 import './index.css';
-import TimeList from "./timeList";
 import { firstContext } from "./context";
 
 var myInterval;
@@ -69,12 +68,8 @@ class App2 extends React.Component{
     }
 
     handleSaveTime =()=>{
-        let h = this.state.houre;
-        let m = this.state.minute;
-        let s = this.state.second;
-        let ms = this.state.milliseconds;
-        let newTime = `${h>9 ? h : "0"+h} : ${m>9 ? m : "0"+m} : ${s>9 ? s : "0"+s} . ${ms>9 ? ms : "0"+ms}`
-        this.context.setTimeArr([ ...this.context.timeArr , newTime]);
+        let newTime = document.querySelector('.timerInner').innerHTML;
+        this.context.setTimeArr([ ...this.context.timeArr , newTime])
     }
 
     render(){
@@ -85,7 +80,7 @@ class App2 extends React.Component{
         return(
         <>
         <div className="timer" onClick={this.handleSaveTime}>
-            <h2 >
+            <h2 className="timerInner">
               {`${h>9 ? h : "0"+h} : ${m>9 ? m : "0"+m} : ${s>9 ? s : "0"+s} . ${ms>9 ? ms : "0"+ms}`}
             </h2>
         </div>
@@ -105,9 +100,6 @@ class App2 extends React.Component{
                 {this.props.isLight ? "🌙" : "🌞"}
             </button>
         </div>
-        <TimeList>
-                {this.context.timeArr}
-        </TimeList>
         </>   
         )
     }
